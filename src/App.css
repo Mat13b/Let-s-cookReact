@@ -1,0 +1,6 @@
+.head {
+    display: flex;
+    justify-content: space-evenly;
+    height: 70px;
+     background-color: #f3f4f6;
+  }
