@@ -32,22 +32,22 @@ const handleFavori = (id) => {
   console.log(recettes); // Afficher le tableau JSON des recettes dans la console du navigateur
 
   return (
-    <main className="container mx-auto ">
-      <h1>Toutes les recettes</h1>
-      <SearchBar setSearch={setRecettes} />
+    <main className="container mx-auto">
+      <h1 className="text-4xl font-bold text-center text-red">Toutes les recettes</h1>
+      <SearchBar setSearch={setTermeDeRecherche} />
       <main className="grid md:grid-cols-2 lg:grid-cols-3 gap-4" >
-        {recettes
+        {Array.isArray(recettes) && recettes
           .filter((recipe) =>
             recipe.title.toLowerCase().includes(termeDeRecherche.toLowerCase())
           )
           .map((recipe) => (
-            <article key={recipe.id} className="p2 shadow-xl rounded">
-              <h2>{recipe.title}</h2>
+            <article key={recipe.id} className=" shadow-xl rounded">
+              <h2 className="text-2xl font-bold text-red-500 text-center">{recipe.title}</h2>
               <div className="relative">
                 <img src={recipe.imageUrl} alt={recipe.title} width="200px" />
                 <FavoriteButton recipe={recipe} handleFavori={handleFavori}/>
               </div>
-              <div className="p-2">
+              <div className="">
                 <p className="flex gap-2">
                   <span>{obtenirEtoilesDifficulte(recipe.difficulty)}</span>
                   <span></span>

@@ -11,10 +11,10 @@ function NavBar() {
             "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 20px 10px -5px rgba(0, 0, 0, 0.04)",
         }}
       >
-        <div className="">
+        <div>
           <img src="src/assets/favicon.svg" alt="Logo" width="100px" />
         </div>
-        <div className="flex justify-around text-white bg-brown ">
+        <div className="flex justify-around text-white bg-brown gap-4 w-1/2 h-16 p-4">
         <a className="" href="/accueil">
           Accueil
         </a>
